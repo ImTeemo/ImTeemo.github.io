@@ -1,5 +1,16 @@
-p
-{
-color:red;
-text-align:center;
-}
+<style type="text/css">
+  body {background-color:#F6F9FD}
+  {
+    color:black;
+    text-align:left;
+  }
+  h2 
+  {
+    color:orange;
+    text-align:center;
+  }
+  h3
+  {
+    text-align:right;
+  }
+</style>

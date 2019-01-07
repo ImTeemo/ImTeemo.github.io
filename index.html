@@ -18,7 +18,8 @@
         <h3>——遇事不决，可问春风</h3>
 	<a href="http://www.baidu.com" target=_blank>
             <img border=1 src="cute.jpg" style="float:right" alt="可爱表情" width="100" height=100 ></img></a>
-        <hr><br/>
+        <hr>
+		<br/>
 	<h6>since 2019.01.04</h6>
 	<div id="directionTable" background-color="#F6F9F0">
 		<br/>
@@ -77,15 +78,75 @@
 	
 	<p><em>世界在倾斜！</em></p>
     <p><strong>世界在壮大！</strong></p>
-	<form>
-		给我留言:<input type="text" name="留言输入框">
-		</form>
-	<form>
-		<input type="radio" name="submit" value="ok"> 加密<br/>
-		</form>
-	<form>
-		<input type="submit" value="提交">
-		</form>
+	<hr/>
+	<div style="border:2px dashed #ccc:320px;text-align:center;">
+		<label for="keyNum">留言密码(自定义):</label>
+		<input type="text" id="keyNum" name="留言密码" class="text"/>
+		<br/>
+		<label for="MSGFrom">留言人:</label>
+		<input type="text" id="MSGFrom" name="留言人" class="text"/>
+		<br/>
+		<label for="MSGContent">留言内容:</label>
+		<input type="text" id="MSGContent" name="留言内容" class="text"/>
+		<br/>
+		<label for="MSGTime">留言日期:</label>
+		<input type="text" id="MSGTime" name="留言日期" class="text"/>
+		<br/>
+		
+		<input type="button" onclick="save()" value="留言">
+		<hr/>
+		<label for="serch_NUM">输入留言密码:</label>
+		<input type="text" id="serch_NUM" name="留言密码">
+		<br/>
+		<input type="button" onclick="find()" value="查找留言"/>
+		<hr/>
+		<p id="find_resualt"><br/></p>
+		
+	</div>
+	<br/>
+	<div id="list">
+	</div>
+	<script>
+		//保存留言
+		function save(){
+			var site=new Object;
+			site.keyNum = document.getElementById("keyNum").value;
+			site.MSGFrom = document.getElementById("MSGFrom").value;
+			site.MSGContent = document.getElementById("MSGContent").value;
+			site.MSGTime = document.getElementById("MSGTime").value;
+			var str =JSON.stringify(site);// 将对象转换为字符串
+			localstorage.setItem(site.keyNum,str);
+			alter("留言成功！");
+		}
+		//查找留言
+		function find(){
+			var serch_NUM = document.getElementById("serch_NUM").value;
+			var str = localStorage.getItem(serch_NUM);
+			var find_resualt = document.getElementById("find_resualt");
+			var site = JSON.parse(str);
+			find_resualt.innerHTML = "于["+MSGTime+"],["+MSGFrom+"]留言："+MSGContent";
+		}
+		//将所有存储在localStorage中的对象提取出来，并展现到界面上
+		// 确保存储的 keyname 对应的值为转换对象，否则JSON.parse会报错
+		function loadAll(){
+			var list = document.getElementById("list");
+			if(localStorage.length>0){
+				var resualt = "<table border='1'>";
+				resualt + = "<tr><td>NAME:</td><td>MSG</td><td>DATE</td></tr>";
+				for(var i=0;i<localStorage.length;i++){
+					var keyNum = localStorage.key(i);
+					var str = localStorage.getItem(keyNum);
+					var site = JSON.parse(str);
+					resualt += "<tr><td>"+site.MSGFrom+"</td><td>"+site.MSGContent+"</td><td>"+site.MSGTime+"</td></tr>";
+				}
+				reslut + ="</table>";
+				list.innerHTML = reslut;
+			}
+			else{
+				list.innerHTML = "找不到你的留言！";
+			}
+		}
+	</script>
 	<br/>
         <a href="#Chead" style="text-decoration:none;">回到顶部</a>
 	<a href="mailto:18380593021@163.com?cc=&subject=#来自我的主页#&body=#来自我的主页#" target=_top style="text-decoration:none;">邮件联系</a><hr/>

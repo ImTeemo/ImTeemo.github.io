@@ -56,11 +56,23 @@
 			function myFunction()
 			{
 				x=document.getElementById("demo") // 找到元素
-				x.style.color="#f6f9ff";          // 改变样式
+				x.style.color="red";          // 改变样式
 			}
 		</script>
 		<noscript>你的浏览器连script都不支持，玩毛线！</noscript>
 		<button type="button" onclick="myFunction()">RED</button>
+	</div>
+	<div id="videoPlay" style="text-align:center">
+		<video id="video1" width="420">
+			<source src="mole.mp4" type="video/mp4">
+			<!--source src="mole.mp4" type="video/ogg"-->
+			你的浏览器不支持播放HTML5视频
+		</video>
+		<br/>
+		<button id ="play" onclick="playPause()">播放/暂停</button>
+		<button id ="bigger" onclick="makeBig()">放大</button>
+		<button id ="smaller" onclick="makeSmall()">缩小</button>
+		<button id ="normal" onclick="makeNormal()">默认</button>
 	</div>
 	
 	<p><em>世界在倾斜！</em></p>

@@ -14,15 +14,57 @@
     </head>
     <body>
 		<hr>
-        <h2 id="HEAD" style="text-align:center">我的主页</h2>
+        <h2 id="head" style="text-align:center">我的主页</h2>
         <h3>——遇事不决，可问春风</h3>
 	<a href="http://www.baidu.com" target=_blank>
-            <img border=1 src="cute.jpg" style="aligin:right"></img></a>
-        <hr>
+            <img border=1 src="cute.jpg" style="float:right" alt="可爱表情" width="100" height=100 ></img></a>
+        <hr><br/>
 	<h6>since 2019.01.04</h6>
-	<br>
+	<div id="directionTable" background-color="#F6F9F0">
+		<br/>
+		<table border='1'  cellpadding="10">
+			<caption>方向</caption>
+			<tr>
+				<td></td>
+				<td>上</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>左</td>
+				<td>中</td>
+				<td>右</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>下</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<div id="alphabeOrderLink">
+		<br/>
+		<ol start="1">
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+		</ol>
+	</div>
+	<div id="actionDemo">
+		</br>
+		<p id="demo">我会变化</p>
+		<script>
+			function myFunction()
+			{
+				x=document.getElementById("demo") // 找到元素
+				x.style.color="#f6f9ff";          // 改变样式
+			}
+		</script>
+		<noscript>你的浏览器连script都不支持，玩毛线！</noscript>
+		<button type="button" onclick="myFunction()">RED</button>
+	</div>
+	
 	<p><em>世界在倾斜！</em></p>
-        <p><strong>世界在壮大！</strong></p>
+    <p><strong>世界在壮大！</strong></p>
 	<form>
 		给我留言:<input type="text" name="留言输入框">
 		</form>
@@ -33,7 +75,7 @@
 		<input type="submit" value="提交">
 		</form>
 	<br/>
-        <a href="#CHEAD" style="text-decoration:none;">回到顶部</a>
+        <a href="#Chead" style="text-decoration:none;">回到顶部</a>
 	<a href="mailto:18380593021@163.com?cc=&subject=#来自我的主页#&body=#来自我的主页#" target=_top style="text-decoration:none;">邮件联系</a><hr/>
     </body>
 </html>

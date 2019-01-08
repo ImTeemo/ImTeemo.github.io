@@ -79,7 +79,7 @@
 	<p><em>世界在倾斜！</em></p>
     <p><strong>世界在壮大！</strong></p>
 	<hr/>
-	<div style="border:2px dashed #ccc:320px;text-align:center;">
+	<div style="border:2px dashed #ccc;320px;text-align:center;">
 		<label for="keyNum">留言密码(自定义):</label>
 		<input type="text" id="keyNum" name="留言密码" class="text"/>
 		<br/>
@@ -107,8 +107,11 @@
 	<div id="list">
 	</div>
 	<script>
+		// 载入所有存储在localStorage的数据
+		loadAll();
 		//保存留言
 		function save(){
+			alter("saving");
 			var site=new Object;
 			site.keyNum = document.getElementById("keyNum").value;
 			site.MSGFrom = document.getElementById("MSGFrom").value;
@@ -120,6 +123,7 @@
 		}
 		//查找留言
 		function find(){
+			alter("finging");
 			var serch_NUM = document.getElementById("serch_NUM").value;
 			var str = localStorage.getItem(serch_NUM);
 			var find_resualt = document.getElementById("find_resualt");
@@ -129,6 +133,7 @@
 		//将所有存储在localStorage中的对象提取出来，并展现到界面上
 		// 确保存储的 keyname 对应的值为转换对象，否则JSON.parse会报错
 		function loadAll(){
+			alter("loading");
 			var list = document.getElementById("list");
 			if(localStorage.length>0){
 				var resualt = "<table border='1'>";

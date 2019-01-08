@@ -17,7 +17,7 @@
         <h2 id="head" style="text-align:center">我的主页</h2>
         <h3>——遇事不决，可问春风</h3>
 	<a href="http://www.baidu.com" target=_blank>
-            <img border=1 src="cute.jpg" style="float:right" alt="可爱表情" width="100" height=100 ></img></a>
+            <img border=1 src="cute.jpg" style="float:right" alt="可爱表情" width="100" height=100/></a>
         <hr/>
 		<br/>
 	<h6>since 2019.01.04</h6>
@@ -53,21 +53,22 @@
 	<div id="actionDemo">
 		<br/>
 		<p id="demo">我会变化</p>
+      <button type="button" onclick="myFunction()">RED</button>
 		<script>
 			function myFunction()
 			{
-				x=document.getElementById("demo") // 找到元素
+				x=document.getElementById("demo"); // 找到元素
 				x.style.color="red";          // 改变样式
 			}
+
 		</script>
 		<noscript>你的浏览器连script都不支持，玩毛线！</noscript>
-		<button type="button" onclick="myFunction()">RED</button>
 	</div>
 	
 	<p><em>世界在倾斜！</em></p>
     <p><strong>世界在壮大！</strong></p>
 	<hr/>
-	<div style="border:2px dashed #ccc;320px;text-align:center;">
+	<div style="border: 2px dashed #ccc;width:320px;text-align:center;">
 		<label for="keyNum">留言密码(自定义):</label>
 		<input type="text" id="keyNum" name="keyNum" class="text"/>
 		<br/>
@@ -75,64 +76,66 @@
 		<input type="text" id="MSGFrom" name="MSGFrom" class="text"/>
 		<br/>
 		<label for="MSGContent">留言内容:</label>
-		<input type="text" id="MSGContent" name="MSGContent" class="text"/>
+		<input type="text" id="MSGContent" name="MSGContent" />
 		<br/>
 		<label for="MSGTime">留言日期:</label>
-		<input type="text" id="MSGTime" name="MSGTime" class="text"/>
+		<input type="text" id="MSGTime" name="MSGTime"/>
 		<br/>
-		<input type="button" onclick="save()" value="留言">
+		<input type="button" onclick="save()" value="留言"/>
 		<hr/>
 		
-		<label for="serch_NUM">输入留言密码:</label>
-		<input type="text" id="serch_NUM" name="serch_NUM">
+		<label for="search_NUM">输入留言密码:</label>
+		<input type="text" id="search_NUM" name="search_NUM"/>
 		<br/>
 		<input type="button" onclick="find()" value="查找留言"/>
 		<hr/>
-		<p id="find_resualt"><br/></p>
+		<p id="find_result"><br/></p>
 		
 	</div>
 	<br/>
-	<div id="list">
-	</div>
+	
+	<div id="list"></div>
+
 	<script>
-		// 载入所有存储在localStorage的数据
-		loadAll();
+      
 		//保存留言
 		function save(){
-			alter("saving");
 			var site=new Object;
 			site.keyNum = document.getElementById("keyNum").value;
 			site.MSGFrom = document.getElementById("MSGFrom").value;
 			site.MSGContent = document.getElementById("MSGContent").value;
 			site.MSGTime = document.getElementById("MSGTime").value;
 			var str =JSON.stringify(site);// 将对象转换为字符串
-			localstorage.setItem(site.keyNum,str);
-			alter("留言成功！");
+			localStorage.setItem(site.keyNum,str);
+			alert("留言成功！");
 		}
 		//查找留言
 		function find(){
-			alter("finging");
-			var serch_NUM = document.getElementById("serch_NUM").value;
-			var str = localStorage.getItem(serch_NUM);
-			var find_result = document.getElementById("find_resualt");
+			var search_NUM = document.getElementById("search_NUM").value;
+			var str = localStorage.getItem(search_NUM);
+			var find_result = document.getElementById("find_result");
 			var site = JSON.parse(str);
-			find_result.innerHTML = "于["+MSGTime+"],["+MSGFrom+"]留言："+MSGContent";
+			find_result.innerHTML = "于["+site.MSGTime+"],["+site.MSGFrom+"]留言："+site.MSGContent;
+			// 输入管理员密码后载入所有存储在localStorage的数据
+			if(site.keyNum == "adminzhy"){
+				alert("welcome,admin!");
+				loadAll();
+			}
 		}
 		//将所有存储在localStorage中的对象提取出来，并展现到界面上
 		// 确保存储的 keyname 对应的值为转换对象，否则JSON.parse会报错
 		function loadAll(){
-			alter("loading");
 			var list = document.getElementById("list");
 			if(localStorage.length>0){
-				var resualt = "<table border='1'>";
-				result + = "<tr><td>NAME:</td><td>MSG</td><td>DATE</td></tr>";
+				var result = "<table border='1'>";
+				result += "<tr><td>NAME:</td><td>MSG</td><td>DATE</td></tr>";
 				for(var i=0;i<localStorage.length;i++){
 					var keyNum = localStorage.key(i);
 					var str = localStorage.getItem(keyNum);
 					var site = JSON.parse(str);
 					result += "<tr><td>"+site.MSGFrom+"</td><td>"+site.MSGContent+"</td><td>"+site.MSGTime+"</td></tr>";
 				}
-				result + ="</table>";
+				result +="</table>";
 				list.innerHTML = result;
 			}
 			else{

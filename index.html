@@ -2,23 +2,23 @@
 <!--2019.01.04-->
 <html>
    <head>
-		<link rel="shortcut icon" href="icon.jpg">
-			<title>www.ahogame.com</title>
-		<base href="http://www.ahogame.com" target="_blank">
-		<link rel="stylesheet" type="text/css" href="index.css">
+		<title>www.ahogame.com</title>
 		<meta charset="utf-8">
 		<meta name="keywords" content="aho,game,ahogame,zhy">
 		<meta name="describle" content="ahogame">
 		<meta name="author" content="zhy">
 		<meta name="refresh" contentt="30">
+		<link rel="shortcut icon" href="icon.jpg">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<base href="http://www.ahogame.com" target="_blank">
     </head>
     <body>
-		<hr>
+		<hr/>
         <h2 id="head" style="text-align:center">我的主页</h2>
         <h3>——遇事不决，可问春风</h3>
 	<a href="http://www.baidu.com" target=_blank>
             <img border=1 src="cute.jpg" style="float:right" alt="可爱表情" width="100" height=100 ></img></a>
-        <hr>
+        <hr/>
 		<br/>
 	<h6>since 2019.01.04</h6>
 	<div id="directionTable" background-color="#F6F9F0">
@@ -51,7 +51,7 @@
 		</ol>
 	</div>
 	<div id="actionDemo">
-		</br>
+		<br/>
 		<p id="demo">我会变化</p>
 		<script>
 			function myFunction()
@@ -63,40 +63,28 @@
 		<noscript>你的浏览器连script都不支持，玩毛线！</noscript>
 		<button type="button" onclick="myFunction()">RED</button>
 	</div>
-	<div id="videoPlay" style="text-align:center">
-		<video id="video1" width="420">
-			<source src="mole.mp4" type="video/mp4">
-			<!--source src="mole.mp4" type="video/ogg"-->
-			你的浏览器不支持播放HTML5视频
-		</video>
-		<br/>
-		<button id ="play" onclick="playPause()">播放/暂停</button>
-		<button id ="bigger" onclick="makeBig()">放大</button>
-		<button id ="smaller" onclick="makeSmall()">缩小</button>
-		<button id ="normal" onclick="makeNormal()">默认</button>
-	</div>
 	
 	<p><em>世界在倾斜！</em></p>
     <p><strong>世界在壮大！</strong></p>
 	<hr/>
 	<div style="border:2px dashed #ccc;320px;text-align:center;">
 		<label for="keyNum">留言密码(自定义):</label>
-		<input type="text" id="keyNum" name="留言密码" class="text"/>
+		<input type="text" id="keyNum" name="keyNum" class="text"/>
 		<br/>
 		<label for="MSGFrom">留言人:</label>
-		<input type="text" id="MSGFrom" name="留言人" class="text"/>
+		<input type="text" id="MSGFrom" name="MSGFrom" class="text"/>
 		<br/>
 		<label for="MSGContent">留言内容:</label>
-		<input type="text" id="MSGContent" name="留言内容" class="text"/>
+		<input type="text" id="MSGContent" name="MSGContent" class="text"/>
 		<br/>
 		<label for="MSGTime">留言日期:</label>
-		<input type="text" id="MSGTime" name="留言日期" class="text"/>
+		<input type="text" id="MSGTime" name="MSGTime" class="text"/>
 		<br/>
-		
 		<input type="button" onclick="save()" value="留言">
 		<hr/>
+		
 		<label for="serch_NUM">输入留言密码:</label>
-		<input type="text" id="serch_NUM" name="留言密码">
+		<input type="text" id="serch_NUM" name="serch_NUM">
 		<br/>
 		<input type="button" onclick="find()" value="查找留言"/>
 		<hr/>
@@ -126,9 +114,9 @@
 			alter("finging");
 			var serch_NUM = document.getElementById("serch_NUM").value;
 			var str = localStorage.getItem(serch_NUM);
-			var find_resualt = document.getElementById("find_resualt");
+			var find_result = document.getElementById("find_resualt");
 			var site = JSON.parse(str);
-			find_resualt.innerHTML = "于["+MSGTime+"],["+MSGFrom+"]留言："+MSGContent";
+			find_result.innerHTML = "于["+MSGTime+"],["+MSGFrom+"]留言："+MSGContent";
 		}
 		//将所有存储在localStorage中的对象提取出来，并展现到界面上
 		// 确保存储的 keyname 对应的值为转换对象，否则JSON.parse会报错
@@ -137,22 +125,34 @@
 			var list = document.getElementById("list");
 			if(localStorage.length>0){
 				var resualt = "<table border='1'>";
-				resualt + = "<tr><td>NAME:</td><td>MSG</td><td>DATE</td></tr>";
+				result + = "<tr><td>NAME:</td><td>MSG</td><td>DATE</td></tr>";
 				for(var i=0;i<localStorage.length;i++){
 					var keyNum = localStorage.key(i);
 					var str = localStorage.getItem(keyNum);
 					var site = JSON.parse(str);
-					resualt += "<tr><td>"+site.MSGFrom+"</td><td>"+site.MSGContent+"</td><td>"+site.MSGTime+"</td></tr>";
+					result += "<tr><td>"+site.MSGFrom+"</td><td>"+site.MSGContent+"</td><td>"+site.MSGTime+"</td></tr>";
 				}
-				reslut + ="</table>";
-				list.innerHTML = reslut;
+				result + ="</table>";
+				list.innerHTML = result;
 			}
 			else{
 				list.innerHTML = "找不到你的留言！";
 			}
 		}
 	</script>
-	<br/>
+	<hr/>
+	<div id="videoPlay" style="text-align:center">
+		<video id="video1" width="420">
+			<source src="mole.mp4" type="video/mp4">
+			<!--source src="mole.mp4" type="video/ogg"-->
+			你的浏览器不支持播放HTML5视频
+		</video>
+		<br/>
+		<button id ="play" onclick="playPause()">播放/暂停</button>
+		<button id ="bigger" onclick="makeBig()">放大</button>
+		<button id ="smaller" onclick="makeSmall()">缩小</button>
+		<button id ="normal" onclick="makeNormal()">默认</button>
+	</div>
         <a href="#Chead" style="text-decoration:none;">回到顶部</a>
 	<a href="mailto:18380593021@163.com?cc=&subject=#来自我的主页#&body=#来自我的主页#" target=_top style="text-decoration:none;">邮件联系</a><hr/>
     </body>

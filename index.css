@@ -66,4 +66,11 @@
 	header, section, footer, aside, nav, main, article, figure {
 		display: block; 
 	}
+	#oneRect 
+	{
+		width:198px;
+		height:66px;
+		padding:10px;
+		border:1px solid #aaaaaa;
+	}
 </style>

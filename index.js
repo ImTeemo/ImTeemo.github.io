@@ -57,6 +57,7 @@
 	}
 </script>
 <script>
+/*自动回滚到顶部*/
 function returnTop(){
 	var getTop = document.getElementById("ItsBackToHEAD");
 	var head = document.getElementById("ItsTitle");
@@ -69,5 +70,20 @@ function returnTop(){
 		}, 1);
 
 	};
+}
+</script>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
 }
 </script>

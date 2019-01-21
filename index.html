@@ -53,7 +53,9 @@
 	</div>
 	<div id="actionDemo">
 		<br/>
-		<p id="demo" draggable=true>颜色</p>
+		<div id="oneRect" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br/>
+		<p id="demo" draggable="true" ondragstart="drag(event)">颜色</p>
 		<button type="button" onclick="myFunction()">RED</button>
 		<script>
 			function myFunction()

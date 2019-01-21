@@ -1,30 +1,69 @@
 <!--本样式表仅定义一些基本样式-->
+<!--潜规则：h2用于主标题，h3用于副标题；h4正文标题；h6用于脚注-->
 <style type="text/css">
-  body 
-  {
-	background-image:url('background.png');
-	background-repeat:no-repeat;
-	background-position:right top;
-	margin-right:200px;
-  }
-  {
-    color:black;
-    text-align:left;
-  }
-  h2 
-  {
-    color:orange;
-    text-align:center;
-  }
-  h3
-  {
-    text-align:right;
-  }
-h6
-{
-  text-align:right;
-}
-header, section, footer, aside, nav, main, article, figure {
-    display: block; 
-}
+	body 
+	{
+		background-image:url(background.png);
+		background-repeat:no-repeat;
+		background-position:right top;
+		margin-right:10px;
+	}
+	body  
+	{
+		font-family: Verdana, sans-serif;
+	}
+
+	p, td, ul, ol, li, dl, dt, dd
+	{
+		font-family: Verdana, sans-serif;
+	}
+	.center
+	{
+		text-align: center;
+	}
+	h2 
+	{
+		color:orange;
+		text-align:center;
+	}
+	h3
+	{
+		text-align:right;
+		margin-right:20px;
+	}
+	h4
+	{
+		color:black;
+		text-align:left;
+		margin-right:20px;
+	}
+	h6
+	{
+		text-align:right;
+		margin-right:20px;
+	}
+	p
+	{
+		text-align:center;
+		margin-right:20px;
+	}
+	ol
+	{
+		background-color:#F0FBEB;
+	}
+	div#ItsBackToHEAD
+	{
+		background-color:#F0FBEB;
+		text-align:center;
+		padding: 1px;
+		position:fixed;
+		height:10%;
+		width:10%;
+		right:5%;
+		top:0px;
+		box-shadow:5px 5px 5px #888888;
+	}
+	header, section, footer, aside, nav, main, article, figure {
+		display: block; 
+	}
 </style>

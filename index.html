@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--2019.01.04-->
 <html>
-   <head>
+	<head>
 		<title>www.ahogame.com</title>
 		<meta charset="utf-8">
 		<meta name="keywords" content="aho,game,ahogame,zhy">
@@ -13,12 +13,18 @@
 		<base href="http://www.ahogame.com" target="_blank">
     </head>
     <body>
+		<a id="TOP"></a>
+		<div id=ItsBackToHEAD>
+			<a href="#TOP" style="text-decoration:none;">TOP</a>
+		</div>
+		<div id=ItsTitle>
+			<hr/>
+			<h2>我的主页</h2>
+			<h3>——遇事不决，可问春风</h3>
+			<a href="http://www.ahogame.com" target=_blank>
+				<img border=1 src="cute.jpg" style="align-right:10px" alt="可爱表情.jpg" width="100" height=100/></a>
+        </div>
 		<hr/>
-        <h2 id="head" style="text-align:center">我的主页</h2>
-        <h3>——遇事不决，可问春风</h3>
-	<a href="http://www.baidu.com" target=_blank>
-            <img border=1 src="cute.jpg" style="float:right" alt="可爱表情" width="100" height=100/></a>
-        <hr/>
 		<br/>
 	<h6>since 2019.01.04</h6>
 	<div id="directionTable" background-color="#F6F9F0">
@@ -26,43 +32,38 @@
 		<table border='1'  cellpadding="10">
 			<caption>方向</caption>
 			<tr>
-				<td></td>
-				<td>上</td>
-				<td></td>
+				<td></td><td>上</td><td></td>
 			</tr>
 			<tr>
-				<td>左</td>
-				<td>中</td>
-				<td>右</td>
+				<td>左</td><td>中</td><td>右</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td>下</td>
-				<td></td>
+				<td></td><td>下</td><td></td>
 			</tr>
 		</table>
 	</div>
 	<div id="alphabeOrderLink">
 		<br/>
-		<ol start="1">
-			<li>A</li>
-			<li>B</li>
-			<li>C</li>
+		<ul>信条
+		<ol start="I">
+			<li>绝对不意气用事!</li>
+			<li>绝对不漏判任何一件坏事!</li>
+			<li>绝对裁判的公正漂亮!</li>
 		</ol>
+		</ul>
 	</div>
 	<div id="actionDemo">
 		<br/>
-		<p id="demo">我会变化</p>
-      <button type="button" onclick="myFunction()">RED</button>
+		<p id="demo">颜色</p>
+		<button type="button" onclick="myFunction()">RED</button>
 		<script>
 			function myFunction()
 			{
 				x=document.getElementById("demo"); // 找到元素
 				x.style.color="red";          // 改变样式
 			}
-
 		</script>
-		<noscript>你的浏览器连script都不支持，玩毛线！</noscript>
+		<noscript>你的浏览器并不支持script，部分功能缺失！</noscript>
 	</div>
 	
 	<p><em>世界在倾斜！</em></p>
@@ -96,57 +97,11 @@
 	
 	<div id="list"></div>
 
-	<script>
-      
-		//保存留言
-		function save(){
-			var site=new Object;
-			site.keyNum = document.getElementById("keyNum").value;
-			site.MSGFrom = document.getElementById("MSGFrom").value;
-			site.MSGContent = document.getElementById("MSGContent").value;
-			site.MSGTime = document.getElementById("MSGTime").value;
-			var str =JSON.stringify(site);// 将对象转换为字符串
-			localStorage.setItem(site.keyNum,str);
-			alert("留言成功！");
-		}
-		//查找留言
-		function find(){
-			var search_NUM = document.getElementById("search_NUM").value;
-			var str = localStorage.getItem(search_NUM);
-			var find_result = document.getElementById("find_result");
-			var site = JSON.parse(str);
-			find_result.innerHTML = "于["+site.MSGTime+"],["+site.MSGFrom+"]留言："+site.MSGContent;
-			// 输入管理员密码后载入所有存储在localStorage的数据
-			if(site.keyNum == "adminzhy"){
-				alert("welcome,admin!");
-				loadAll();
-			}
-		}
-		//将所有存储在localStorage中的对象提取出来，并展现到界面上
-		// 确保存储的 keyname 对应的值为转换对象，否则JSON.parse会报错
-		function loadAll(){
-			var list = document.getElementById("list");
-			if(localStorage.length>0){
-				var result = "<table border='1'>";
-				result += "<tr><td>NAME:</td><td>MSG</td><td>DATE</td></tr>";
-				for(var i=0;i<localStorage.length;i++){
-					var keyNum = localStorage.key(i);
-					var str = localStorage.getItem(keyNum);
-					var site = JSON.parse(str);
-					result += "<tr><td>"+site.MSGFrom+"</td><td>"+site.MSGContent+"</td><td>"+site.MSGTime+"</td></tr>";
-				}
-				result +="</table>";
-				list.innerHTML = result;
-			}
-			else{
-				list.innerHTML = "找不到你的留言！";
-			}
-		}
-	</script>
+
 	<hr/>
 	<div id="videoPlay" style="text-align:center">
 		<video id="video1" width="420">
-			<source src="mole.mp4" type="video/mp4">
+			<source src="www.ahogame.com/mole.mp4" type="video/mp4">
 			<!--source src="mole.mp4" type="video/ogg"-->
 			你的浏览器不支持播放HTML5视频
 		</video>
@@ -156,7 +111,7 @@
 		<button id ="smaller" onclick="makeSmall()">缩小</button>
 		<button id ="normal" onclick="makeNormal()">默认</button>
 	</div>
-        <a href="#Chead" style="text-decoration:none;">回到顶部</a>
+	
 	<a href="mailto:18380593021@163.com?cc=&subject=#来自我的主页#&body=#来自我的主页#" target=_top style="text-decoration:none;">邮件联系</a><hr/>
     </body>
 </html>

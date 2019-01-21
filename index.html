@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <!--2019.01.04-->
 <html>
-	<head>
-		<title>www.ahogame.com</title>
-		<meta charset="utf-8">
-		<meta name="keywords" content="aho,game,ahogame,zhy">
-		<meta name="describle" content="ahogame">
-		<meta name="author" content="zhy">
-		<meta name="refresh" contentt="30">
-		<link rel="shortcut icon" href="icon.jpg">
-		<link rel="stylesheet" type="text/css" href="index.css">
-		<base href="http://www.ahogame.com" target="_blank">
-    </head>
-    <body>
-		<a id="TOP"></a>
-		<div id=ItsBackToHEAD>
-			<a href="#TOP" style="text-decoration:none;">TOP</a>
-		</div>
-		<div id=ItsTitle>
-			<hr/>
-			<h2>我的主页</h2>
-			<h3>——遇事不决，可问春风</h3>
-			<a href="http://www.ahogame.com" target=_blank>
-				<img border=1 src="cute.jpg" style="align-right:10px" alt="可爱表情.jpg" width="100" height=100/></a>
-        </div>
+<head>
+	<title>www.ahogame.com</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="aho,game,ahogame,zhy">
+	<meta name="describle" content="ahogame">
+	<meta name="author" content="zhy">
+	<meta name="refresh" contentt="30">
+	<link rel="shortcut icon" href="icon.jpg">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<base href="http://www.ahogame.com" target="_blank">
+</head>
+<body>
+	<a id="TOP"></a>
+	<div id=ItsBackToHEAD>
+		<a href="#TOP" style="text-decoration:none;">TOP</a>
+	</div>
+	<div id=ItsTitle>
 		<hr/>
-		<br/>
+		<h2>我的主页</h2>
+		<h3>——遇事不决，可问春风</h3>
+		<a href="http://www.ahogame.com" target=_blank>
+			<img border=1 src="cute.jpg" style="align-right:10px" alt="可爱表情.jpg" width="100" height=100/></a>
+	</div>
+	<hr/>
 	<h6>since 2019.01.04</h6>
-	<div id="directionTable" background-color="#F6F9F0">
+	<div id="directionTable" background-color=orange>
 		<br/>
 		<table border='1'  cellpadding="10">
 			<caption>方向</caption>
@@ -54,7 +53,7 @@
 	</div>
 	<div id="actionDemo">
 		<br/>
-		<p id="demo">颜色</p>
+		<p id="demo" draggable=true>颜色</p>
 		<button type="button" onclick="myFunction()">RED</button>
 		<script>
 			function myFunction()
@@ -69,39 +68,38 @@
 	<p><em>世界在倾斜！</em></p>
     <p><strong>世界在壮大！</strong></p>
 	<hr/>
+	
 	<div style="border: 2px dashed #ccc;width:320px;text-align:center;">
-		<label for="keyNum">留言密码(自定义):</label>
+		<label for="keyNum">序号(自定义):</label>
 		<input type="text" id="keyNum" name="keyNum" class="text"/>
 		<br/>
-		<label for="MSGFrom">留言人:</label>
+		<label for="MSGFrom">作者:</label>
 		<input type="text" id="MSGFrom" name="MSGFrom" class="text"/>
 		<br/>
-		<label for="MSGContent">留言内容:</label>
+		<label for="MSGContent">便签内容:</label>
 		<input type="text" id="MSGContent" name="MSGContent" />
 		<br/>
-		<label for="MSGTime">留言日期:</label>
+		<label for="MSGTime">日期:</label>
 		<input type="text" id="MSGTime" name="MSGTime"/>
 		<br/>
 		<input type="button" onclick="save()" value="留言"/>
 		<hr/>
 		
-		<label for="search_NUM">输入留言密码:</label>
+		<label for="search_NUM">输入序号:</label>
 		<input type="text" id="search_NUM" name="search_NUM"/>
 		<br/>
-		<input type="button" onclick="find()" value="查找留言"/>
+		<input type="button" onclick="find()" value="查找便签"/>
 		<hr/>
 		<p id="find_result"><br/></p>
 		
 	</div>
 	<br/>
-	
 	<div id="list"></div>
-
-
 	<hr/>
+	
 	<div id="videoPlay" style="text-align:center">
 		<video id="video1" width="420">
-			<source src="www.ahogame.com/mole.mp4" type="video/mp4">
+			<source src="https:\\www.ahogame.com/mole.mp4" type="video/mp4">
 			<!--source src="mole.mp4" type="video/ogg"-->
 			你的浏览器不支持播放HTML5视频
 		</video>

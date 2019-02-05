@@ -21,35 +21,41 @@
 	{
 		text-align: center;
 	}
-	h2 
+	#myTitle
+	{
+		background-color:#EEEEEE;
+	}
+	#myTitle h2
 	{
 		color:orange;
 		text-align:center;
+		padding:2%;
 	}
-	h3
+	#myTitle h3
 	{
 		text-align:right;
-		margin-right:20px;
+		margin-right:5%;
 	}
-	h4
+	#forAll
 	{
-		color:black;
-		text-align:left;
-		margin-right:20px;
+		margin-left:5%;
+		margin-right:5%;
 	}
 	h6
 	{
 		text-align:right;
-		margin-right:20px;
+		margin-right:5%;
 	}
 	p
 	{
 		text-align:center;
-		margin-right:20px;
+		margin-right:5%;
 	}
 	ol
 	{
 		background-color:#F0FBEB;
+		margin-right:5%;
+		margin-left:5%;
 	}
 	div#ItsBackToHEAD
 	{
@@ -72,5 +78,6 @@
 		height:66px;
 		padding:10px;
 		border:1px solid #aaaaaa;
+		
 	}
 </style>

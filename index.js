@@ -1,6 +1,6 @@
 <script>
-  
-	//保存留言
+//【便签】
+	//保存便签
 	function save(){
 		var site=new Object;
 		site.keyNum = document.getElementById("keyNum").value;
@@ -11,7 +11,7 @@
 		localStorage.setItem(site.keyNum,str);
 		alert("添加成功！");
 	}
-	//查找留言
+	//查找便签
 	function find(){
 		var search_NUM = document.getElementById("search_NUM").value;
 		var str = localStorage.getItem(search_NUM);
@@ -25,7 +25,7 @@
 			loadAll();
 		}
 	}
-	//删除留言
+	//删除便签
 	function deleteMSG(tempid){
 		alert(tempid);
 		localStorage.removeItem(tempid); 
@@ -55,35 +55,45 @@
 			list.innerHTML = "找不到你的留言！";
 		}
 	}
-</script>
-<script>
-/*自动回滚到顶部*/
-function returnTop(){
-	var getTop = document.getElementById("ItsBackToHEAD");
-	var head = document.getElementById("ItsTitle");
-	getTop.onclick = function () {
-		var time = setInterval(function () {
-			document.body.scrollTop = document.body.scrollTop - 50;
-			if (document.body.scrollTop === 0) {
-				clearInterval(time);
-			}
-		}, 1);
 
-	};
-}
-</script>
-<script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
+//【自动回滚到顶部】
+	/*自动回滚到顶部*/
+	function returnTop(){
+		var getTop = document.getElementById("ItsBackToHEAD");
+		var head = document.getElementById("ItsTitle");
+		getTop.onclick = function () {
+			var time = setInterval(function () {
+				document.body.scrollTop = document.body.scrollTop - 50;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
+		};
+	}
+
+//【拖放操作】
+	/*拖放操作相关函数*/
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+
+//【更改颜色】
+	//改变id为demo的元素为红色
+	function changeColor()
+	{
+		x=document.getElementById("demo");
+		x.style.color="red";
+	}
 </script>

@@ -19,12 +19,15 @@
 	</div>
 	<div id=ItsTitle>
 		<hr/>
-		<h2>我的主页</h2>
-		<h3>——遇事不决，可问春风</h3>
-		<a href="http://www.ahogame.com" target=_blank>
-			<img border=1 src="cute.jpg" style="align-right:10px" alt="可爱表情.jpg" width="100" height=100/></a>
+		<div id="myTitle">
+			<h2>我的主页</h2>
+			<h3>——遇事不决，可问春风</h3>
+		</div>
+
 	</div>
 	<hr/>
+	<a href="http://www.ahogame.com" target=_blank>
+		<img border=1 src="cute.jpg" style="align-right:10px" alt="可爱表情.jpg" width="100" height=100/></a>
 	<h6>since 2019.01.04</h6>
 	<div id="directionTable" background-color=orange>
 		<br/>
@@ -56,14 +59,7 @@
 		<div id="oneRect" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 		<br/>
 		<p id="demo" draggable="true" ondragstart="drag(event)">颜色</p>
-		<button type="button" onclick="myFunction()">RED</button>
-		<script>
-			function myFunction()
-			{
-				x=document.getElementById("demo"); // 找到元素
-				x.style.color="red";          // 改变样式
-			}
-		</script>
+		<button type="button" onclick="changeColor()">RED</button>
 		<noscript>你的浏览器并不支持script，部分功能缺失！</noscript>
 	</div>
 	
